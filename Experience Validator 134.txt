@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.time.LocalDate;
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter year");
+		String year = scan.nextLine();
+		System.out.println("enter experience");
+		String experience = scan.nextLine();
+		validateExp(year, experience);
+	}
+}
+class UserMainCode {
+	static boolean validateExp(String year, String exp) {
+		boolean result;
+		int yr = Integer.parseInt(year);
+		int expe = Integer.parseInt(exp);
+		LocalDate currentDate = LocalDate.now();
+		int currentyear = currentDate.getYear();
+		if ((currentyear - yr) >= expe) {
+			result = true;
+			System.out.println("TRUE");
+		} else {
+			result = false;
+			System.out.println("FALSE");
+		}
+		return result;
+	}
+}
